@@ -2,7 +2,6 @@
 #MAT 465/565 (FALL 2014)
 ##############################################
 
-setwd("C:\\Users\\WYARAVMS\\Google Drive\\graduação-ufpi-2011.2015\\ualbany-fall-2014\\mat-465-564")
 library(rv)
 library(ggplot2)
 library(MCMCpackage)
