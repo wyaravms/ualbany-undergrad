@@ -1,0 +1,25 @@
+# A person's muscle mass is expected to decrease with age.
+# To explore this relationship in women, a nutritionist randomly selected
+# four women from each 10-year age group, beginning with age 40 and 
+# ending with age 79. The results follow; x is age, and y is a measure
+# of muscle mass.
+# ---------------cut-here---------------
+   Age	  MuscleMass
+   71	  82
+   64	  91
+   43	  100
+   67	  68
+   56	  87
+   73	  73
+   68	  78
+   56	  80
+   76	  65
+   65	  84
+   45	  116
+   58	  76
+   45	  97
+   53	  100
+   49	  105
+   78	  77
+#----------------up-to-here---------------------
+#Ref: Applied Linear Statistical Models (2nd ed.) by Neter et. al. p56.
