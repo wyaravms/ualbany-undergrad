@@ -1,0 +1,323 @@
+\documentclass[a4paper, 12pt]{article}
+
+%
+
+% Margin - 1 inch on all sides
+%
+\usepackage[margin=1in]{geometry}
+
+
+%
+% Babel package for multiple languages typesetting
+%
+\usepackage[english]{babel}
+
+% Doublespacing
+%
+\usepackage{setspace}
+\doublespacing
+
+%
+% Setting the font
+
+%\usepackage{times}
+
+%
+% Rotating tables (e.g. sideways when too long)
+%
+\usepackage{rotating}
+
+
+%
+% For multiples rows in tables
+% 
+\usepackage{multirow}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{ {./img/} }
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amsmath}
+%\usepackage{mathtools}
+
+
+\makeatletter% Set distance from top of page to first float
+\setlength{\@fptop}{5pt}
+\makeatother
+
+\setlength\abovedisplayskip{0pt}
+
+% 
+%Line numbering in verse environment
+%
+%\usepackage{lineno}
+\usepackage{enumerate}
+%
+%Fancy-header package to modify header/page numbering (insert last name)
+%
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{\thepage}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%To make sure we actually have header 0.5in away from top edge
+%12pt is one-sixth of an inch. Subtract this from 0.5in to get headsep value
+\setlength\headsep{0.333in}
+
+
+\begin{document}
+\begin{flushleft}
+
+%%%%First page name, class, etc
+Wyara Vanesa Moura e Silva\\
+Professor Kevin Knuth \\
+PHY/CSI/INF 451/551: Bayesian Data Analysis / Signal Processing \\
+Sept 30, 2014\\
+
+%\noindent
+%\hrulefill
+%%%%Title
+\begin{center}
+\textbf{Homework 2 Written}
+\end{center}
+%\noindent
+%\hrulefill 
+
+
+\setlength{\parindent}{0.5in}
+
+\textbf{1. A fair 20-sided die}
+
+\textbf{(a)} States: \{1\}, \{2\}, \{3\}, \{4\}, \{5\}, \{6\}.
+
+All of them are mutually exclusive because two or more events cannot happen at the same time, and exhaustive because at least one of those outcomes will occur.
+
+\textbf{(b)} As the fair 20-sided die, so all probability of which side is the same (p). Therefore, the sum of probabilities of all state is 1.
+
+$$ \displaystyle\sum_{i=1}^{20}p(i=x|I)=1 \rightarrow \displaystyle\sum_{i=1}^{20}p=1 \rightarrow 20p=1 \rightarrow p=\frac{1}{20} $$
+
+So, the probability of $i=7$ is equal: 
+
+$$ p(i=7|I)=\frac{1}{20} = 0.05 $$
+
+\textbf{c)} If $i$ is odd $\rightarrow$ there are 10 sided odd.
+
+$$ p(i \; is \; odd|I) = p(i=1 \vee i=3 \vee i=5 \vee i=7 \vee i=9 \vee i=11 \vee $$
+$$ i=13 \vee i=15 \vee i=17 \vee i=19|I) $$
+$$ p(i \; is \; odd|I) = p(i=1|I) + p(i=3|I) + p(i=5|I) + p(i=7|I) + p(i=9|I) +  $$
+$$ p(i=11|I) + p(i=13|I) + p(i=15|I) + p(i=17|I) + p(i=19|I) $$
+$$ p(i \; is \; odd|I) = 10p = 10 \times \frac{1}{20} = \frac{1}{2} = 0.5 $$
+
+\textbf{d)} If $i$ is prime $\rightarrow$ there are 8 sided prime.
+
+$$ p(i \; is \; prime|I) = p(i=2 \vee i=3 \vee i=5 \vee i=7 \vee $$
+$$ i=11 \vee i=13 \vee i=17 \vee i=19|I) $$
+$$ p(i \; is \; prime|I) = p(i=2|I) + p(i=3|I) + p(i=5|I) + p(i=7|I) + $$
+$$ p(i=11|I) + p(i=13|I) + p(i=17|I) + p(i=19|I) $$
+$$ p(i \; is \; prime|I) = 8p = 8 \times \frac{1}{20} = \frac{2}{5} = 0.4 $$
+
+\textbf{e)} The expected value of $i$ is calculated for:
+
+$$ E(i) = \displaystyle\sum_{i=1}^{20} i \times P(x=i|I) $$
+$$ E(i) = 1 \times \frac{1}{20} + 2 \times \frac{1}{20} + 3 \times \frac{1}{20} + 4 \times \frac{1}{20} + 5 \times \frac{1}{20} + 6 \times \frac{1}{20} + 7 \times \frac{1}{20} + $$
+$$ 8 \times \frac{1}{20} + 9 \times \frac{1}{20} + 10 \times \frac{1}{20} + 11 \times \frac{1}{20} + 12 \times \frac{1}{20} + 13 \times \frac{1}{20} + 14 \times \frac{1}{20} + $$
+$$  15 \times \frac{1}{20} + 16 \times \frac{1}{20} + 17 \times \frac{1}{20} + 18 \times \frac{1}{20} + 19 \times \frac{1}{20} + 20 \times \frac{1}{20} $$
+$$ E(i) = 10.5 $$
+
+\textbf{f)} No, it is not possible to observe the expected value because it is not an integer, and can be regarded as weighted average.
+
+\textbf{g)} 
+$$ p(i \; is \; \{1,2,3,4,5\}|I) = p(i=1 \vee i=2 \vee i=3 \vee i=4 \vee i=5) $$
+$$ p(i=1|I) + p(i=2|I) + p(i=3|I) + p(i=4|I) + p(i=5|I) $$
+$$ 5p = 5 \times \frac{1}{20} = \frac{1}{4} $$
+$$ p(i \; is \; \{1,2,3,4,5\}|I) = 0.25 $$
+
+
+\textbf{2. Independent Pair of Fair 8-Sided Dice}
+
+\textbf{a)} Considering the independence of the dice, the probability of the state $j$ occur does not dependent of the state $i$ occur.
+
+$$ p(i|j,I) = \frac{p(i|j,I)}{p(j|I)} = \frac{p(i|I)p(j|I)}{p(j|I)} = p(i|I)$$
+
+\textbf{b)} The two dice are independent, so the first dice have 8 sides with 8 possible events (\{1\}, \{2\}, \{3\}, \{4\}, \{5\}, \{6\}, \{7\}, \{8\}).
+
+$$ \displaystyle\sum_{i=1}^{8} =1 \rightarrow \displaystyle\sum_{i=1}^{8}p=1 \rightarrow 8p=1 \rightarrow p=\frac{1}{8} $$
+
+Therefore,
+$$ p(i=2|I) = p = \frac{1}{8}$$
+
+\textbf{c)} 
+$$ p(i=2, j=4|I) = p(i=2|I) = p(j=4|i=2|I) $$
+$$ \frac{1}{8} \times p(j=4|I) = \frac{1}{8} \times \frac{1}{8} = \frac{1}{64} $$
+
+\textbf{d)} The expected value of $i$:
+$$ E(i) = \displaystyle\sum_{i=1}^{8} i \times P(x=i|I) $$
+$$ E(i) = 1 \times \frac{1}{8} + 2 \times \frac{1}{8} + 3 \times \frac{1}{8} + 4 \times \frac{1}{8} + 5 \times \frac{1}{8} + 6 \times \frac{1}{8}+ 7 \times \frac{1}{8} + 8 \times \frac{1}{8}$$
+$$ E(i) = \frac{36}{8} = 4.5 $$
+
+\textbf{e)} No, it is not possible to observe the expected value because it is not an integer, and can be regarded as weighted average.
+
+\textbf{f)} Expected value of $i+j$:
+$$ E(i+j) = \displaystyle\sum_{i=1}^{8}\displaystyle\sum_{i=1}^{8} (i+j) \times P(i,j|I) $$
+$$ E(i+j) = \displaystyle\sum_{i=1}^{8}\displaystyle\sum_{i=1}^{8} (i+j) \times P(i|I) \ast p(j|I) $$
+$$ E(i+j) = \displaystyle\sum_{i=1}^{8}\displaystyle\sum_{i=1}^{8} (i+j) \times \frac{1}{8} \ast \frac{1}{8} $$
+$$ E(i+j) = \displaystyle\sum_{i=1}^{8}\displaystyle\sum_{i=1}^{8} (i+j) \times \frac{1}{64} $$
+
+
+All possible sum are in the Table 1 below: 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c | }
+        \hline
+        i / j    & 1 & 2  & 3  & 4  & 5  & 6 & 7 & 8 \\
+        \hline
+        1   & 2 & 3  & 4  & 5  & 6  & 7 & 8 & 9\\
+        \hline
+        2   & 3 & 4 & 5 & 6 & 7  & 8 & 9 & 10\\
+        \hline
+        3   & 4 & 5 & 6 & 7  & 8 & 9 & 10 & 11\\
+        \hline
+        4   & 5 & 6 & 7  & 8 & 9 & 10 & 11 & 12\\
+        \hline
+        5   & 6 & 7  & 8 & 9 & 10 & 11 & 12 & 13\\
+        \hline
+        6   & 7 & 8  & 9  & 10  & 11 &12 & 13 & 14\\
+        \hline
+				7   & 8 & 9  & 10  & 11  & 12 &13 & 14 & 15\\
+        \hline
+				8   & 9 & 10  & 11  & 12  & 13 &14 & 15 & 16\\
+        \hline
+    \end{tabular}
+    \caption{Table with all the possible cases of sum}
+    \label{tab:allprob}
+\end{table}
+$$ E(i) = 1 \times \frac{2}{64} + 2 \times \frac{3}{64} + 3 \times \frac{4}{64} + 4 \times \frac{5}{64} + 5 \times \frac{6}{64} + 6 \times \frac{7}{64} + $$
+$$ 7 \times \frac{8}{64} + 8 \times \frac{9}{64} + 7 \times \frac{10}{64} + 6 \times \frac{11}{64} + 5 \times \frac{12}{64} + 4 \times \frac{13}{64} +  $$
+$$ 3 \times \frac{14}{64} + 2 \times \frac{15}{64}+ \frac{16}{64}$$
+$$ E(i) = \frac{2}{64} + \frac{6}{64} + \frac{12}{64} + \frac{20}{64} + \frac{30}{64} + \frac{42}{64} + \frac{56}{64} + \frac{72}{64} + \frac{70}{64} + \frac{66}{64} + \frac{60}{64} $$
+$$ + \frac{52}{64} + \frac{42}{64} + \frac{30}{64} + \frac{16}{64} $$
+$$ E(i) = \frac{576}{64} = 9$$ 
+
+\textbf{g)} There are 8 possibilities to happen sum equal 9.
+$$ p(i+j=9|I) = \frac{8}{64} = 0.125 $$
+
+\textbf{3. Coupled Dice}
+
+\textbf{a)} Probabilities of all the possible cases.
+$$ p(i=1|I) = 0 \ \textrm{and} \ p(j=6|I) = 0 $$
+
+$$ P(i=x, j=x|I) = \underbrace{2p(i=x,j=y|I)}_{adjacent \ \textrm{faces}} = \underbrace{4p(i=x,j=y|I)}_{opposite \ \textrm{faces}}  $$
+$$ p = 2p_{a} = 4p_{o} $$
+
+The same faces appear:
+$$ \displaystyle\sum_{i=2}^{5} p(i=x, j=x|I) $$
+$$ p(i=2, j=2|I) + p(i=3, j=3|I) + p(i=4, j=4|I) + p(i=5, j=5|I) $$
+$$ p + p + p + p = 4p $$
+
+Adjacent faces appear: 
+$$ p(i=x, j=x|I) = 2p(i=x, j=y|I) $$
+$$ 4p = 2p_{a} $$
+$$ 2p = p_{a} $$
+
+Opposite faces appear:
+$$ p(i=x, j=x|I) = 4p(i=x, j=y|I) $$
+$$ 4p = 4p_{a} $$
+$$ p = p_{a} $$
+
+\textbf{b)} Proof of how the probabilities sum to unity:
+
+$$ \displaystyle\sum_{i=1}^{6}\displaystyle\sum_{i=1}^{6} p(i=x, j=y|I) = 1 $$
+$$ 4 \times 4p + 8 \times 2p + 4 \times p = 1 $$
+$$ 36p = 1 \rightarrow p = \frac{1}{36} $$
+
+
+The same faces appear: $4p = \frac{1}{9}$ 
+
+Adjacent faces appear: $2p = \frac{1}{18}$
+
+Opposite faces appear: $p = \frac{1}{36}$
+
+All probabilities can be viewed in the Table 2 below:
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{| c | c | c | c | c | c | c | }
+        \hline
+        i / j    & 1 & 2  & 3  & 4  & 5  & 6 \\
+        \hline
+        1   & 0 & 0  & 0  & 0  & 0  & 0 \\
+        \hline
+        2   & 0 & 4p & 2p & 2p & p  & 0 \\
+        \hline
+        3   & 0 & 2p & 4p & p  & 2p & 0 \\
+        \hline
+        4   & 0 & 2p & p  & 4p & 2p & 0 \\
+        \hline
+        5   & 0 & p  & 2p & 2p & 4p & 0 \\
+        \hline
+        6   & 0 & 0  & 0  & 0  & 0  & 0 \\
+        \hline
+    \end{tabular}
+    \caption{Table with probabilities for all the possible results}
+    \label{tab:allprob}
+\end{table}
+
+\textbf{c)} The expected value of i+j:
+$$ E(i+j) = \displaystyle\sum_{i=1}^{6}\displaystyle\sum_{i=1}^{6} (i+j) \times P(i,j|I) $$
+
+All possible sums are below in the Table 3:
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{| c | c | c | c | c | c | c | }
+        \hline
+        i / j    & 1 & 2  & 3  & 4  & 5  & 6 \\
+        \hline
+        0   & 0 & 0 & 0  & 0  & 0  & 0 \\
+        \hline
+        0   & 3 & 4 & 5 & 6 & 7  & 0 \\
+        \hline
+        0   & 4 & 5 & 6 & 7  & 8 & 0 \\
+        \hline
+        0   & 5 & 6 & 7  & 8 & 9 & 0 \\
+        \hline
+        0   & 6 & 7  & 8 & 9 & 10 & 0 \\
+        \hline
+        0   & 0 & 0  & 0  & 0  & 0 &0 \\
+        \hline
+    \end{tabular}
+    \caption{Table with all the possible cases of sum}
+    \label{tab:allprob}
+\end{table}
+$$ E(i+j) = \underbrace{4 \times 4p + 6 \times 4p + 10 \times 4p +}_{\textrm{the same faces appear}} $$
+$$ \underbrace{5 \times 2p + 5 \times 2p + 6 \times 2p + 8 \times 2p + 8 \times 2p + 9 \times 2p + 9 \times 2p +}_{\textrm{adjacent faces appear}} $$
+$$ \underbrace{7 \times p + 7 \times p + 7 \times p + 7 \times p}_{\textrm{opposite faces appear}} $$
+
+$$ E(i+j) = 28 \times 4p + 56 \times 2p + 28 \times p = 112p + 112p + 28p $$
+$$ E(i+j) = 252p = 252 \times \frac{1}{36} $$
+$$ E(i+j) = 7 $$
+
+\textbf{d)} $p(i|I)$ for all values of $i$.
+
+$$ \displaystyle\sum_{i=1}^{6}p(i|I) = p(1|I) + p(2|I) + p(3|I) + p(4|I) + p(5|I) + p(6|I) $$
+$$ p(2|I) \rightarrow \textrm{for which row is the same} $$
+$$ p(2|I) = 4p + 2p + 2p + p = 9p = 9 \times \frac{1}{36} = \frac{1}{4}$$
+
+\textbf{e)} Expected value of $i$.
+$$ E(i) = \displaystyle\sum_{i=1}^{6}i \times P(i|I) = 1 \times 0 + 2 \times \frac{1}{4} + 3 \times \frac{1}{4} + 4 \times \frac{1}{4} + 5 \times \frac{1}{4} + 6 \times 0   $$
+$$ E(i) = \frac{1}{2} + \frac{3}{4} + 1 + \frac{5}{4} = \frac{2+3+4+5}{4} = \frac{14}{4} $$ 
+$$ E(i) = 3.5 $$
+
+
+
+\end{flushleft}
+
+\end{document}
