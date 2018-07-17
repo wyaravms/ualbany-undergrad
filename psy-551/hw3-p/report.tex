@@ -1,0 +1,174 @@
+\documentclass[a4paper, 12pt]{article}
+
+%
+
+% Margin - 1 inch on all sides
+%
+\usepackage[margin=1in]{geometry}
+
+
+%
+% Babel package for multiple languages typesetting
+%
+\usepackage[english]{babel}
+
+% Doublespacing
+%
+\usepackage{setspace}
+\doublespacing
+
+%
+% Setting the font
+
+%\usepackage{times}
+
+%
+% Rotating tables (e.g. sideways when too long)
+%
+\usepackage{rotating}
+
+
+%
+% For multiples rows in tables
+% 
+\usepackage{multirow}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{ {./img/} }
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amsmath}
+%\usepackage{mathtools}
+
+
+\makeatletter% Set distance from top of page to first float
+\setlength{\@fptop}{5pt}
+\makeatother
+
+\setlength\abovedisplayskip{0pt}
+
+% 
+%Line numbering in verse environment
+%
+%\usepackage{lineno}
+\usepackage{enumerate}
+%
+%Fancy-header package to modify header/page numbering (insert last name)
+%
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{\thepage}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%To make sure we actually have header 0.5in away from top edge
+%12pt is one-sixth of an inch. Subtract this from 0.5in to get headsep value
+\setlength\headsep{0.333in}
+
+
+\begin{document}
+\begin{flushleft}
+
+%%%%First page name, class, etc
+Wyara Vanesa Moura e Silva\\
+Professor Kevin Knuth \\
+PHY/CSI/INF 451/551: Bayesian Data Analysis / Signal Processing \\
+Oct 7, 2014\\
+
+%\noindent
+%\hrulefill
+%%%%Title
+\begin{center}
+\textbf{Homework 3 Programming}
+\end{center}
+%\noindent
+%\hrulefill 
+
+
+\setlength{\parindent}{0.5in}
+
+\textbf{Vostok Ice Core Sample Data Sets}
+
+The Figure 1a and 1b show the time series and the histogram of the CO2 levels over time for the Vostok Ice Core Sample Data Sets. 
+
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{.4\textwidth}
+        \includegraphics[width=\textwidth]{g1}
+        \caption{CO2 levels over time - Vostok}
+        \label{fig:g1}
+    \end{subfigure}
+    \begin{subfigure}[t]{.40\textwidth}
+        \includegraphics[width=\textwidth]{g2}
+        \caption{Histogram - CO2 levels}
+        \label{fig:diff_cosine}
+    \end{subfigure}
+    \caption{Vostok Graphics}
+    \label{fig:cosines}
+\end{figure}
+
+The Table 1 show the values for range of variability, mean and standard deviation of the CO2 levels
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{| c | c |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Vostok}} \\
+        \hline
+        Range & 116.5 \\
+        \hline
+        Mean & 232.186501 \\
+        \hline
+        Standard Deviation & 28.485936 \\
+        \hline
+    \end{tabular}
+    \caption{Range of variability, mean and standard deviation of the CO2 levels - Vostok}
+    \label{tab:vostokvariability}
+\end{table}
+
+
+\textbf{Mauna Loa Atmopheric Sample Data Set}
+
+The Figure 2a show the time series of the CO2 levels over modern times for the Mauna Loa Atmopheric. There is a period of the oscillations monthly, as we can see in the Figure 2b. This trend happens every year, throughout the month.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{.4\textwidth}
+        \includegraphics[width=\textwidth]{g3}
+        \caption{CO2 levels over modern times - Mauna Loa}
+        \label{fig:g3}
+    \end{subfigure}
+    \begin{subfigure}[t]{.4\textwidth}
+        \includegraphics[width=\textwidth]{g4}
+        \caption{Monthly variability of 2003 year}
+        \label{fig:diff_cosine}
+    \end{subfigure}
+    \caption{Mauna Loa Graphics}
+    \label{fig:cosines}
+\end{figure}
+
+
+
+Through research conducted at $<$http://www.esrl.noaa.gov/$>$. I found possible causes of these oscillations. There is a month-to-month variability in the CO2 concentration that may be caused by anomalies of the winds or weather systems arriving at Mauna Loa. A smooth trend consisting of a seasonal cycle. Each year, the atmospheric CO2 concentration varies between a high value in winter (because of biospheric respiration) and a low value in summer (because of drawdown by photosynthesis); thus, a wave-like pattern is superimposed on the year-to-year increasing trend.
+
+\textbf{Combine the two data sets by concatenating the arrays}
+
+The Figure 3 show the time series of the Co2 levels - old and modern dates. The Co2 level in May 1986 is equal to 350.21. After calculated the mean of the old dates, and modern dates, we found 232.186501 for the Vostok, and 342.162890 for the Mauna Loa, which shows the Vostok Co2 levels are higher than Mauna Loa Co2 levels. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{g5}
+\caption{Co2 levels - old and modern dates}
+\end{figure}
+
+\end{flushleft}
+
+\end{document}
