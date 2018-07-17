@@ -1,0 +1,229 @@
+\documentclass[a4paper, 12pt]{article}
+
+%
+
+% Margin - 1 inch on all sides
+%
+\usepackage[margin=1in]{geometry}
+
+
+%
+% Babel package for multiple languages typesetting
+%
+\usepackage[english]{babel}
+
+% Doublespacing
+%
+\usepackage{setspace}
+\doublespacing
+
+%
+% Setting the font
+
+%\usepackage{times}
+
+%
+% Rotating tables (e.g. sideways when too long)
+%
+\usepackage{rotating}
+
+
+%
+% For multiples rows in tables
+% 
+\usepackage{multirow}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{ {./img/} }
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amsmath}
+%\usepackage{mathtools}
+
+
+\makeatletter% Set distance from top of page to first float
+\setlength{\@fptop}{5pt}
+\makeatother
+
+\setlength\abovedisplayskip{0pt}
+
+% 
+%Line numbering in verse environment
+%
+%\usepackage{lineno}
+\usepackage{enumerate}
+%
+%Fancy-header package to modify header/page numbering (insert last name)
+%
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{\thepage}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%To make sure we actually have header 0.5in away from top edge
+%12pt is one-sixth of an inch. Subtract this from 0.5in to get headsep value
+\setlength\headsep{0.333in}
+
+
+\begin{document}
+\begin{flushleft}
+
+%%%%First page name, class, etc
+Wyara Vanesa Moura e Silva\\
+Professor Kevin Knuth \\
+PHY/CSI/INF 451/551: Bayesian Data Analysis / Signal Processing \\
+Oct 16, 2014\\
+
+%\noindent
+%\hrulefill
+%%%%Title
+\begin{center}
+\textbf{Homework 4 Written}
+\end{center}
+%\noindent
+%\hrulefill 
+
+
+\setlength{\parindent}{0.5in}
+
+\textbf{1. Bayes Theorem and the Weather.}
+
+\textbf{(a) Hypothesis and the data } 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        Hypothesis: & $R$ - On days when it does rain  \\
+                    & $\overline{R}$ - On days when it does not rain\\
+										& \\
+        Data:       & $DC$ - There are dark clouds that roll in during the morning \\
+                    & $\overline{DC}$ - There are not dark clouds that roll in during the morning \\
+    \end{tabular}
+    \label{tab:hypdata}
+\end{table}
+
+
+\textbf{(b) Bayes Theorem for this problem} 
+
+$$ p(R | DC, I) = \frac{p(DC | R, I)p(R | I)}{p(DC|I)} $$
+
+\textbf{(c) Expression for the evidence}
+
+$$ p(DC | I) = p(DC, R | I) + p(DC, \overline{R} | I) = $$
+%$$ p(RO | I)p(DC | RO,I) + p(\neg RO | I)p(DC | \neg RO, I) $$
+
+
+\textbf{(d) Using Bayes Theorem to solve the problem} 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        $ p(R | I) = 0.29 $    & $ p(\overline{R} | I) = 0.71 $ \\
+        $ p(DC | R, I) = 0.9 $ &  $ p(DC | \overline{R}, I) = 0.25 $ \\
+    \end{tabular}
+\end{table}
+
+$$ p(RO | DC, I) = \frac{p(DC | R, I)p(R | I)}{p(DC|I)} $$
+$$ = \frac{p(DC | R, I)p(R | I)}{p(DC | R,I)p(R | I) + p(DC | \overline{R}, I)p(\overline{R} | I)} $$
+$$ = \frac{0.9 \times 0.29}{0.9 \times 0.29 + 0.25 \times0.71 } $$
+$$ = \frac{0.261}{0.4385} = 0.59521  $$
+%$$ p(RO | DC, I) = \frac{0.29 \times 0.9}{0.4385} = 0.59521 $$ 
+
+
+
+\textbf{2. You are a laptop repair person.}
+
+\textbf{(a) Hypothesis and the data } 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        Hypothesis: & $FP$ - Laptop’s power supply has failed  \\
+                    & $\overline{FP}$ - Laptop’s power supply is OK\\
+										& \\
+        Data:       & $S$ - Plugging it in will produce smoke \\
+                    & $\overline{S}$ - Plugging it doesn't in will produce smoke \\
+    \end{tabular}
+    \label{tab:hypdata}
+\end{table}
+
+
+\textbf{(b) Bayes Theorem for this problem} 
+
+$$ p(FP | S, I) = \frac{p(S | FP, I)p(FP | I)}{p(S|I)} $$
+
+\textbf{(c) Expression for the evidence}
+
+$$ p(S | I) = p(S, \overline{FP} | I) + p(S, FP | I) = $$
+%$$ p(S | FP,I)p(FP | I) + p(S | \overline{FP}, I)p(\overline{FP} | I) $$
+
+
+\textbf{(d) Using Bayes Theorem to solve the problem} 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        $ p(FP | I) = 0.3 $    & $ p(\overline{FP} | I) = 0.7 $ \\
+        $ p(S | FP, I) = 0.45 $ &  $ p(S | \overline{FP}, I) = 0.05 $ \\
+    \end{tabular}
+\end{table}
+
+$$ p(FP | S, I) = \frac{p(S | FP, I)p(FP | I)}{p(S|I)} $$
+$$ = \frac{p(S | FP, I)p(FP | I)}{p(S | FP,I)p(FP | I) + p(S | \overline{FP}, I)p(\overline{FP} | I)} $$
+$$ = \frac{0.45 \times 0.3}{0.45 \times 0.3 + 0.05 \times0.7 } $$
+$$ = \frac{0.135}{0.17} = 0.7941	  $$
+%$$ p(RO | DC, I) = \frac{0.29 \times 0.9}{0.4385} = 0.59521 $$ 
+
+
+\textbf{3. The blue M\&M was introduced in 1995. }
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        Symbols: & $Y$ - Yellow M\&Ms  \\
+                    & $G$ - Green M\&Ms\\
+										& \\
+										& $B1=94$ - Bag 1 from 1994 \\
+                    & $B2=96$ - Bag 2 from 1996 \\
+										& $B1=94$ - Bag 1 from 1994 \\
+										& $B2=96$ - Bag 2 from 1996 \\
+    \end{tabular}
+    \label{tab:hypdata}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        $ p(B1=94, B2=96 | I) = 0.5 $    & $ p(B1=96, B2=94 | I) = 0.5  $ \\
+    \end{tabular}
+\end{table}
+
+\textbf{Solution using Bayes Theorem}
+
+$$ p(YB1, GB2 | B1=94, B2=96, I ) = 0.2 \times 0.2 = 0.04 $$
+$$ p(YB1, GB2 | B1=96, B2=94, I ) = 0.14 \times 0.1 = 0.014 $$
+
+\textbf{Bayes Expression}
+
+If B1 is from 1994, so B2 is from 1996. Therefore, I will not put that B2=94 or B2=96 in the probabilities condition for not confuse.
+
+
+$$ p(B1=94 | Y B1, G B2, I) = \frac{p(YB1, G B2 | B1=94, I)p(B1=94 | I)}{p(Y B1, G B2|I)} $$
+$$ = \frac{p(YB1, G B2 | B1=94, I)p(B1=94 | I)}{p(YB1, GB2 | B1=94,I)p(B1=94 | I) + p(YB1, G B2 | B1=96, I)p(B1=96| I)} $$
+$$ = \frac{0.04 \times 0.5}{0.04 \times 0.5 + 0.014 \times0.5 } $$
+$$ = \frac{0.02}{0.027} = 0.7407	  $$
+
+
+
+\end{flushleft}
+
+\end{document}
